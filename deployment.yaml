@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mydepoyment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: new1
+  template:
+    metadata:
+      labels:
+        app: new1
+    spec:
+      containers:
+      - name: container1
+        image: shubhampatil1/myimage:latest
+        ports:
+        - containerPort: 8080
